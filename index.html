@@ -180,9 +180,9 @@
   @media (max-width: 640px) {
     .tedx-callout { top: -11px; left: -2px; }
     body { padding-bottom: 4.75rem; }
-    /* Brighten the gold wordmark on small screens to match desktop */
-    .gold-text { background:linear-gradient(180deg,#fff7df 0%,#f7ead0 35%,#ecdcae 70%,#d8bd7e 100%); -webkit-background-clip:text; background-clip:text; }
-    .shine-glow { text-shadow:0 0 30px rgba(246,235,205,0.78), 0 0 72px rgba(230,212,163,0.5); }
+    /* Brighten the gold wordmark on small screens — solid bright gold, no dark gradient bottom */
+    .gold-text { background:none !important; -webkit-text-fill-color:#f9e9ad; color:#f9e9ad; }
+    .shine-glow { text-shadow:0 0 22px rgba(249,233,173,0.95), 0 0 58px rgba(230,212,163,0.65); }
   }
   .sticky-cta { box-shadow: 0 -10px 28px rgba(0,0,0,0.5); }
   #register { scroll-margin-top: 1.25rem; }
