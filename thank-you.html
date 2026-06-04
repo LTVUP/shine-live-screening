@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>You're In — SHINE Live Screening | June 30th</title>
+<meta name="description" content="Your seat is reserved for the live screening of SHINE on June 30th. Check your email for the link to join and additional details." />
+<meta name="robots" content="noindex" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: { ink:'#0d0d0d', gold:'#c2a86b', goldlt:'#e6d4a3', cream:'#fff5ee' },
+      fontFamily: { head:['Oswald','sans-serif'], body:['Roboto','sans-serif'] },
+    } },
+  };
+</script>
+
+<style>
+  body { background:#0d0d0d; color:#fff5ee; font-family:'Roboto',sans-serif; line-height:1.7; overflow-x:hidden; }
+  .font-head { font-family:'Oswald',sans-serif; }
+  .cinema-bg {
+    position:relative; min-height:100vh;
+    background:
+      radial-gradient(900px 520px at 50% -8%, rgba(194,168,107,0.22), transparent 60%),
+      radial-gradient(700px 500px at 15% 110%, rgba(194,168,107,0.10), transparent 55%),
+      linear-gradient(180deg, #141210 0%, #0d0d0d 45%, #0b0b0b 100%);
+  }
+  .grain::before {
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:0.05; z-index:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .vignette::after { content:""; position:absolute; inset:0; pointer-events:none; z-index:0; box-shadow:inset 0 0 240px 60px rgba(0,0,0,0.75); }
+  .gold-text { background:linear-gradient(180deg,#f3e6c0 0%,#e6d4a3 35%,#c2a86b 70%,#9c8244 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .shine-glow { text-shadow:0 0 38px rgba(230,212,163,0.5), 0 0 80px rgba(194,168,107,0.32); }
+  .hairline { background:linear-gradient(90deg,transparent,rgba(194,168,107,0.6),transparent); height:1px; }
+  .check-ring { animation:pulse 2.6s ease-out infinite; }
+  @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(194,168,107,0.45);} 70%{box-shadow:0 0 0 26px rgba(194,168,107,0);} 100%{box-shadow:0 0 0 0 rgba(194,168,107,0);} }
+  .card { background:linear-gradient(180deg, rgba(34,31,29,0.92), rgba(17,15,14,0.92)); border:1px solid rgba(194,168,107,0.3); box-shadow:0 40px 90px -30px rgba(0,0,0,0.85); }
+  ::selection { background:rgba(194,168,107,0.35); color:#fff; }
+</style>
+</head>
+
+<body class="font-body antialiased">
+<main class="cinema-bg grain vignette flex items-center justify-center px-5 py-16">
+  <div class="relative z-10 w-full max-w-2xl text-center">
+
+    <!-- Brand line -->
+    <div class="flex items-center justify-center gap-3 mb-10">
+      <span class="hairline w-12 sm:w-16"></span>
+      <span class="font-head tracking-[0.3em] text-xs sm:text-sm text-gold/90 uppercase">Decode The Narrative</span>
+      <span class="hairline w-12 sm:w-16"></span>
+    </div>
+
+    <!-- Gold check -->
+    <div class="check-ring w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-8"
+         style="background:linear-gradient(180deg,#e6d4a3,#c2a86b 60%,#ab8f4f);">
+      <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#1a1410" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+    </div>
+
+    <span class="font-head tracking-[0.28em] text-sm text-gold uppercase">Your Seat Is Reserved</span>
+    <h1 class="font-head font-bold uppercase leading-[0.92] mt-3 mb-7 text-5xl sm:text-7xl">
+      <span class="gold-text shine-glow">You're In</span>
+    </h1>
+
+    <p class="text-cream/90 text-lg sm:text-xl font-light leading-relaxed max-w-xl mx-auto">
+      Thank you for reserving your seat to the live screening of the film.
+      Please check your email for the link to join and for additional details.
+    </p>
+
+    <!-- Event details -->
+    <div class="card rounded-2xl px-6 py-7 mt-10 max-w-md mx-auto">
+      <div class="font-head tracking-[0.2em] text-sm text-gold uppercase mb-4">Save the Date</div>
+      <div class="flex items-center justify-center gap-6">
+        <div>
+          <div class="font-head text-goldlt text-2xl leading-none">June 30</div>
+          <div class="font-head tracking-[0.14em] text-[11px] text-cream/55 uppercase mt-1.5">The Premiere</div>
+        </div>
+        <span class="w-px h-9 bg-gold/25"></span>
+        <div>
+          <div class="font-head text-goldlt text-2xl leading-none">7:00 PM</div>
+          <div class="font-head tracking-[0.14em] text-[11px] text-cream/55 uppercase mt-1.5">CST · Live Online</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-cream/55 text-sm mt-8 font-light">
+      Add it to your calendar so you don't miss it. We'll send your private viewing link before we go live.
+    </p>
+
+    <div class="hairline w-40 mx-auto my-10"></div>
+    <p class="text-cream/40 text-xs font-light tracking-wide">Truth isn't told, it's exposed.</p>
+
+  </div>
+</main>
+</body>
+</html>

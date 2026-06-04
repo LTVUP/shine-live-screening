@@ -201,7 +201,7 @@
     <!-- Brand line -->
     <div class="flex items-center justify-center gap-3 mb-9">
       <span class="hairline w-10 sm:w-16"></span>
-      <span class="font-head tracking-[0.42em] text-[11px] sm:text-xs text-gold/90 uppercase">Decode The Narrative Presents</span>
+      <span class="font-head tracking-[0.3em] text-xs sm:text-sm text-gold/90 uppercase">Decode The Narrative Presents</span>
       <span class="hairline w-10 sm:w-16"></span>
     </div>
 
@@ -214,41 +214,29 @@
 
       <!-- Subheadline now ABOVE the title -->
       <p class="font-head text-xl sm:text-2xl lg:text-[1.7rem] text-cream/90 tracking-wide font-light mt-7 max-w-3xl mx-auto">
-        A live evening with <span class="text-goldlt font-medium">Mikki Willis</span>, director of the Plandemic series,
+        A live evening with <span class="text-goldlt font-medium">Mikki Willis</span>, director of the <span class="text-goldlt font-medium">Plandemic series</span>,
         and his son <span class="text-goldlt font-medium">Azai Willis</span>.
       </p>
 
-      <h1 class="font-head font-bold uppercase leading-[0.9] mt-4 mb-8
-                 text-[3.4rem] sm:text-7xl lg:text-[6.6rem] tracking-tight">
-        <span class="block text-cream/95 text-[1.1rem] sm:text-3xl lg:text-4xl font-normal tracking-[0.1em] sm:tracking-[0.18em] mb-1">The World Premiere of</span>
+      <h1 class="font-head font-bold uppercase leading-[0.88] mt-10 sm:mt-14 mb-7
+                 text-[4.4rem] sm:text-8xl lg:text-[6.6rem] tracking-tight">
+        <span class="block text-cream/95 text-[1.35rem] sm:text-3xl lg:text-4xl font-normal tracking-[0.12em] sm:tracking-[0.18em] mb-2">The World Premiere of</span>
         <span class="gold-text shine-glow">SHINE</span>
       </h1>
 
-      <!-- Call-out: the emotional hook quote (doubled in size) -->
-      <figure class="mt-8 max-w-4xl mx-auto">
-        <blockquote class="relative text-cream font-light text-2xl sm:text-4xl lg:text-[2.6rem] italic leading-[1.3] px-6 sm:px-10">
-          <span class="font-head text-gold text-7xl leading-none absolute -left-2 -top-6 select-none">“</span>
+      <!-- Call-out: the emotional hook quote (subordinate to the headline) -->
+      <figure class="mt-7 max-w-3xl mx-auto">
+        <blockquote class="relative text-cream/90 font-light text-lg sm:text-xl lg:text-[1.55rem] italic leading-[1.5] px-7 sm:px-10">
+          <span class="font-head text-gold text-5xl leading-none absolute -left-1 -top-3 select-none">“</span>
           What I&rsquo;m about to share could explain everything. The depression. The anxiety. The emptiness.
           The disconnection that&rsquo;s become our new normal.
         </blockquote>
-        <figcaption class="mt-5 font-head tracking-[0.2em] text-sm sm:text-base text-gold uppercase">&mdash; Azai Willis, age 14</figcaption>
+        <figcaption class="mt-4 font-head tracking-[0.2em] text-sm text-gold uppercase">&mdash; Azai Willis, age 14</figcaption>
       </figure>
     </div>
 
-    <!-- COUNTDOWN (above the fold) -->
-    <div class="mt-10 sm:mt-12 max-w-xl mx-auto">
-      <div class="font-head tracking-[0.28em] text-xs text-gold uppercase text-center mb-3">The Premiere Begins In</div>
-      <div id="countdown" class="flex items-stretch justify-center gap-2.5 sm:gap-4">
-        <div class="cd-tile"><span id="cd-d" class="cd-num">00</span><span class="cd-lbl">Days</span></div>
-        <div class="cd-tile"><span id="cd-h" class="cd-num">00</span><span class="cd-lbl">Hours</span></div>
-        <div class="cd-tile"><span id="cd-m" class="cd-num">00</span><span class="cd-lbl">Minutes</span></div>
-        <div class="cd-tile"><span id="cd-s" class="cd-num">00</span><span class="cd-lbl">Seconds</span></div>
-      </div>
-      <div class="text-center text-cream/55 text-xs mt-3 font-light tracking-wide">June 30th &middot; 7:00 PM CST &middot; Live Online</div>
-    </div>
-
-    <!-- SPLIT: Left image / Right sign-up widget -->
-    <div class="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center mt-14 lg:mt-16">
+    <!-- SPLIT: Left image / Right sign-up widget + countdown -->
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start mt-14 lg:mt-16">
 
       <!-- LEFT: Clickable TEDx video thumbnail -->
       <div class="relative">
@@ -272,9 +260,9 @@
           </div>
         </button>
 
-        <!-- Caption: this clip is Azai's TEDx talk, not the film -->
+        <!-- Caption -->
         <p class="text-center text-cream/60 text-sm mt-5 font-light tracking-wide">
-          <span class="text-goldlt font-medium">De-Vice</span> &nbsp;·&nbsp; Azai&rsquo;s TEDx talk, Austin
+          Azai&rsquo;s TEDx talk &middot; Austin
         </p>
       </div>
 
@@ -284,9 +272,10 @@
       <!--  Replace the native <form> below with the Zoom embed when      -->
       <!--  wiring the live registration (keep .form-card wrapper).       -->
       <!-- ============================================================= -->
+      <div class="space-y-6">
       <div id="register" class="form-card rounded-2xl p-7 sm:p-9">
         <div class="text-center mb-6">
-          <div class="font-head tracking-[0.2em] text-xs text-gold uppercase mb-2">Free Registration</div>
+          <div class="font-head tracking-[0.18em] text-sm text-gold uppercase mb-2">Free Registration</div>
           <h2 class="font-head font-semibold uppercase text-[1.6rem] sm:text-4xl text-cream leading-none">Reserve Your Free Seat</h2>
           <p class="text-cream/70 mt-3 text-sm sm:text-base font-light">Enter your name and email to lock in your spot for June 30th.</p>
         </div>
@@ -325,6 +314,19 @@
         </div>
       </div>
 
+      <!-- COUNTDOWN (under the registration widget) -->
+      <div class="form-card rounded-2xl px-6 py-6">
+        <div class="font-head tracking-[0.2em] text-sm text-gold uppercase text-center mb-4">The Premiere Begins In</div>
+        <div id="countdown" class="flex items-stretch justify-center gap-2.5 sm:gap-3">
+          <div class="cd-tile"><span id="cd-d" class="cd-num">00</span><span class="cd-lbl">Days</span></div>
+          <div class="cd-tile"><span id="cd-h" class="cd-num">00</span><span class="cd-lbl">Hours</span></div>
+          <div class="cd-tile"><span id="cd-m" class="cd-num">00</span><span class="cd-lbl">Minutes</span></div>
+          <div class="cd-tile"><span id="cd-s" class="cd-num">00</span><span class="cd-lbl">Seconds</span></div>
+        </div>
+        <div class="text-center text-cream/55 text-xs mt-4 font-light tracking-wide">June 30th &middot; 7:00 PM CST &middot; Live Online</div>
+      </div>
+      </div><!-- /right column -->
+
     </div><!-- /split -->
   </div>
 </header>
@@ -332,7 +334,7 @@
 <!-- ================= THE STORY ================= -->
 <section class="cinema-bg relative border-t border-gold/10">
   <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 py-20 text-center reveal">
-    <span class="font-head tracking-[0.3em] text-xs text-gold uppercase">A Six Minute Film</span>
+    <span class="font-head tracking-[0.2em] text-sm sm:text-base text-gold uppercase">A Six Minute Film</span>
     <h2 class="font-head font-semibold uppercase text-[1.5rem] sm:text-5xl text-cream mt-3 mb-6 leading-tight">It is six minutes long.<br class="hidden sm:block" /> It will stay with you a lot longer.</h2>
 
     <!-- Praise & adulation: SHINE festival acclaim (the award is for the FILM, not the TEDx clip) -->
@@ -363,7 +365,7 @@
 <section class="cinema-bg relative border-t border-gold/10">
   <div class="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 py-20">
     <div class="text-center mb-12 reveal">
-      <span class="font-head tracking-[0.3em] text-xs text-gold uppercase">The Evening</span>
+      <span class="font-head tracking-[0.2em] text-sm sm:text-base text-gold uppercase">The Evening</span>
       <h2 class="font-head font-semibold uppercase text-3xl sm:text-5xl text-cream mt-3">What Happens Live</h2>
     </div>
     <div class="grid sm:grid-cols-2 gap-5">
@@ -391,7 +393,7 @@
 <section class="cinema-bg relative border-t border-gold/10">
   <div class="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 py-20">
     <div class="text-center mb-12 reveal">
-      <span class="font-head tracking-[0.3em] text-xs text-gold uppercase">Father &amp; Son</span>
+      <span class="font-head tracking-[0.2em] text-sm sm:text-base text-gold uppercase">Father &amp; Son</span>
       <h2 class="font-head font-semibold uppercase text-3xl sm:text-5xl text-cream mt-3">Meet the Filmmakers</h2>
     </div>
     <div class="grid sm:grid-cols-2 gap-7 max-w-4xl mx-auto">
@@ -429,7 +431,7 @@
     <div class="grid lg:grid-cols-2 gap-12 items-center">
       <!-- Why live -->
       <div class="reveal">
-        <span class="font-head tracking-[0.3em] text-xs text-gold uppercase">Once Only</span>
+        <span class="font-head tracking-[0.2em] text-sm sm:text-base text-gold uppercase">Once Only</span>
         <h2 class="font-head font-semibold uppercase text-3xl sm:text-5xl text-cream mt-3 mb-5 leading-tight">Why You Have to Be There Live</h2>
         <p class="text-cream/80 text-lg font-light leading-relaxed">This happens once. The premiere, the conversation, and the Q&amp;A all unfold in real time. If you want to be in the room, June 30th is the only way in.</p>
       </div>
@@ -467,7 +469,7 @@
   <div class="relative z-10 max-w-2xl mx-auto px-5 sm:px-8 py-24 text-center reveal">
     <div class="flex items-center justify-center gap-3 mb-6">
       <span class="hairline w-12"></span>
-      <span class="font-head tracking-[0.3em] text-xs text-gold uppercase">One Night Only</span>
+      <span class="font-head tracking-[0.2em] text-sm sm:text-base text-gold uppercase">One Night Only</span>
       <span class="hairline w-12"></span>
     </div>
     <h2 class="font-head font-bold uppercase text-4xl sm:text-6xl mb-4 leading-none">
@@ -553,9 +555,9 @@
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var btn = f.querySelector('button[type="submit"]');
-      btn.textContent = 'Seat Reserved ✓';
-      btn.style.filter = 'brightness(1.05)';
-      // NOTE: Zoom webinar registration wiring goes here.
+      btn.textContent = 'Reserving…';
+      // NOTE: real registration (Zoom + MaroPost) wires in here; on success, redirect to the thank-you page.
+      window.location.href = 'thank-you.html';
     });
   });
 
