@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//LTVUP//SHINE Premiere//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:shine-premiere-2026-06-30@mikkiwillis.com
+DTSTAMP:20260608T000000Z
+DTSTART:20260701T000000Z
+DTEND:20260701T013000Z
+SUMMARY:The World Premiere of SHINE
+DESCRIPTION:Live online premiere of SHINE plus a live conversation and Q&A with Mikki and Azai Willis. Your private viewing link will be emailed before we go live.
+LOCATION:Live Online
+END:VEVENT
+END:VCALENDAR

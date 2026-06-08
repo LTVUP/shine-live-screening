@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The World Premiere of SHINE · Live Screening with Mikki & Azai Willis | June 30th</title>
+<meta name="description" content="One night only. The world premiere of SHINE, the award winning film by 14 year old Azai Willis, with a live conversation alongside his father Mikki Willis. Reserve your free seat for June 30th." />
+
+<!-- Open Graph / iMessage / social link preview -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ltvup.github.io/shine-live-screening/" />
+<meta property="og:title" content="The World Premiere of SHINE · June 30th" />
+<meta property="og:description" content="One night only, live online. The premiere of SHINE plus a live conversation with Mikki and Azai Willis. Reserve your free seat." />
+<meta property="og:image" content="https://ltvup.github.io/shine-live-screening/images/og-shine.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="The World Premiere of SHINE · June 30th" />
+<meta name="twitter:description" content="One night only, live online. Premiere of SHINE plus a live conversation with Mikki and Azai Willis. Reserve your free seat." />
+<meta name="twitter:image" content="https://ltvup.github.io/shine-live-screening/images/og-shine.jpg" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:    '#0d0d0d',
+          panel:  '#1a1818',
+          surface:'#221f1d',
+          gold:   '#c2a86b',
+          goldlt: '#e6d4a3',
+          cream:  '#fff5ee',
+        },
+        fontFamily: {
+          head: ['Oswald', 'sans-serif'],
+          body: ['Roboto', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #0d0d0d;
+    color: #fff5ee;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  .font-head { font-family: 'Oswald', sans-serif; }
+
+  /* Cinematic background: deep base + warm radial spotlights + vignette */
+  .cinema-bg {
+    position: relative;
+    background:
+      radial-gradient(900px 520px at 50% -8%, rgba(194,168,107,0.20), transparent 60%),
+      radial-gradient(700px 500px at 12% 18%, rgba(194,168,107,0.08), transparent 55%),
+      radial-gradient(800px 600px at 92% 75%, rgba(194,168,107,0.06), transparent 55%),
+      linear-gradient(180deg, #141210 0%, #0d0d0d 40%, #0b0b0b 100%);
+  }
+  /* Film grain overlay */
+  .grain::before {
+    content: "";
+    position: absolute; inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  /* Vignette to push focus to center */
+  .vignette::after {
+    content: "";
+    position: absolute; inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    box-shadow: inset 0 0 240px 60px rgba(0,0,0,0.75);
+  }
+
+  .gold-text {
+    background: linear-gradient(180deg, #f3e6c0 0%, #e6d4a3 35%, #c2a86b 70%, #9c8244 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .shine-glow { text-shadow: 0 0 38px rgba(230,212,163,0.55), 0 0 80px rgba(194,168,107,0.35); }
+
+  .hairline { background: linear-gradient(90deg, transparent, rgba(194,168,107,0.6), transparent); height: 1px; }
+
+  /* Eyebrow / callout pills */
+  .pill {
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    border: 1px solid rgba(194,168,107,0.45);
+    background: rgba(194,168,107,0.07);
+    color: #e6d4a3;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  /* Thumbnail frame */
+  .frame {
+    position: relative;
+    border: 1px solid rgba(194,168,107,0.45);
+    box-shadow: 0 30px 80px -30px rgba(0,0,0,0.9), 0 0 0 1px rgba(0,0,0,0.4) inset, 0 0 60px rgba(194,168,107,0.12);
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+  .frame:hover { transform: translateY(-4px); box-shadow: 0 40px 90px -28px rgba(0,0,0,0.95), 0 0 80px rgba(194,168,107,0.22); }
+  .frame:hover .play-btn { transform: translate(-50%,-50%) scale(1.08); background: #c2a86b; }
+  .frame:hover img { transform: scale(1.04); }
+  .frame img { transition: transform .6s ease; }
+
+  .play-btn {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+    width: 86px; height: 86px; border-radius: 9999px;
+    background: rgba(194,168,107,0.92);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 0 12px rgba(194,168,107,0.18), 0 14px 40px rgba(0,0,0,0.55);
+    transition: transform .35s ease, background .35s ease;
+  }
+  .play-ring { animation: pulse 2.6s ease-out infinite; }
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(194,168,107,0.45); }
+    70%  { box-shadow: 0 0 0 26px rgba(194,168,107,0); }
+    100% { box-shadow: 0 0 0 0 rgba(194,168,107,0); }
+  }
+
+  /* TEDx callout above-left of thumbnail */
+  .tedx-callout {
+    position: absolute; top: -18px; left: -14px; z-index: 20;
+    background: #0d0d0d;
+    border: 1px solid rgba(194,168,107,0.55);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  }
+
+  /* Form card */
+  .form-card {
+    background: linear-gradient(180deg, rgba(34,31,29,0.96), rgba(20,18,16,0.96));
+    border: 1px solid rgba(194,168,107,0.35);
+    box-shadow: 0 40px 90px -30px rgba(0,0,0,0.85), 0 0 60px rgba(194,168,107,0.06);
+    backdrop-filter: blur(6px);
+  }
+  .fld {
+    width: 100%;
+    background: rgba(13,13,13,0.7);
+    border: 1px solid rgba(255,245,238,0.16);
+    color: #fff5ee;
+    border-radius: 10px;
+    padding: 0.95rem 1.05rem;
+    font-size: 1rem;
+    transition: border .25s ease, box-shadow .25s ease;
+  }
+  .fld::placeholder { color: rgba(255,245,238,0.4); }
+  .fld:focus { outline: none; border-color: #c2a86b; box-shadow: 0 0 0 3px rgba(194,168,107,0.18); }
+
+  .btn-gold {
+    background: linear-gradient(180deg, #e6d4a3, #c2a86b 60%, #ab8f4f);
+    color: #1a1410;
+    letter-spacing: 0.12em;
+    box-shadow: 0 16px 36px -10px rgba(194,168,107,0.55);
+    transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+  }
+  .btn-gold:hover { transform: translateY(-2px); filter: brightness(1.06); box-shadow: 0 22px 46px -10px rgba(194,168,107,0.7); }
+  .btn-gold:active { transform: translateY(0); }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  .card {
+    background: linear-gradient(180deg, rgba(34,31,29,0.7), rgba(17,15,14,0.7));
+    border: 1px solid rgba(194,168,107,0.18);
+  }
+  .monogram {
+    font-family: 'Oswald', sans-serif;
+    background: linear-gradient(160deg, #2a2622, #16130f);
+    border: 1px solid rgba(194,168,107,0.4);
+    color: #e6d4a3;
+  }
+  ::selection { background: rgba(194,168,107,0.35); color: #fff; }
+
+  /* Mobile: keep TEDx callout on-canvas + reserve room for sticky CTA */
+  @media (max-width: 640px) {
+    .tedx-callout { top: -11px; left: -2px; }
+    body { padding-bottom: 4.75rem; }
+    /* Bright + glowing gold wordmark on small screens (bright gradient sheen + strong halo) */
+    .gold-text { background-image:linear-gradient(180deg,#fff6d8 0%,#f9e9ad 48%,#e9d28a 100%) !important; -webkit-background-clip:text !important; background-clip:text !important; -webkit-text-fill-color:transparent !important; color:transparent; }
+    .shine-glow { text-shadow:0 0 18px rgba(255,242,196,0.92), 0 0 46px rgba(249,233,173,0.72), 0 0 88px rgba(194,168,107,0.55); }
+  }
+  .sticky-cta { box-shadow: 0 -10px 28px rgba(0,0,0,0.5); }
+  #register { scroll-margin-top: 1.25rem; }
+
+  /* Countdown */
+  .cd-tile { display:flex; flex-direction:column; align-items:center; justify-content:center; min-width:78px; padding:0.75rem 0.5rem; border:1px solid rgba(194,168,107,0.3); border-radius:12px; background:linear-gradient(180deg, rgba(34,31,29,0.92), rgba(17,15,14,0.92)); box-shadow:0 12px 32px -18px rgba(0,0,0,0.85); }
+  .cd-num { font-family:'Oswald',sans-serif; font-weight:600; font-size:2.1rem; line-height:1; color:#e6d4a3; font-variant-numeric:tabular-nums; }
+  .cd-lbl { font-family:'Oswald',sans-serif; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,245,238,0.55); margin-top:0.4rem; }
+  @media (max-width:640px){ .cd-tile{ min-width:0; flex:1; padding:0.6rem 0.2rem; } .cd-num{ font-size:1.55rem; } .cd-lbl{ font-size:9px; letter-spacing:0.1em; } }
+</style>
+</head>
+
+<body class="font-body antialiased">
+
+<!-- ================= HERO (ABOVE THE FOLD) ================= -->
+<header class="cinema-bg grain vignette relative">
+  <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 pt-10 pb-16 lg:pt-14 lg:pb-20">
+
+    <!-- POSTER HERO: poster left, live-event headline + form right -->
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+
+      <!-- LEFT: SHINE film poster (the visual headline) -->
+      <div class="order-1 lg:order-none">
+        <div class="mx-auto max-w-[280px] sm:max-w-xs lg:max-w-md" style="filter:drop-shadow(0 40px 80px rgba(0,0,0,0.7));">
+          <img src="../images/global-premiere-banner.jpg"
+               alt="SHINE — a short film by Azai Willis. Best Documentary Short, Santa Monica International Film Festival. Global premiere June 30th."
+               class="w-full rounded-xl border border-gold/25" />
+        </div>
+      </div>
+
+      <!-- RIGHT: Sign-up widget -->
+      <!-- ============================================================= -->
+      <!--  ZOOM WEBINAR REGISTRATION WIDGET MOUNT POINT                  -->
+      <!--  Replace the native <form> below with the Zoom embed when      -->
+      <!--  wiring the live registration (keep .form-card wrapper).       -->
+      <!-- ============================================================= -->
+      <div class="space-y-6 order-2 lg:order-none">
+
+        <!-- Live event headline (the poster carries SHINE; this carries the live event + both names) -->
+        <div class="text-center lg:text-left">
+          <span class="pill rounded-full px-6 py-2.5 text-xs sm:text-sm font-head font-medium" style="background:#100f0d; letter-spacing:0.16em; color:#efe2bd;">
+            <span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
+            One Night Only &nbsp;•&nbsp; Live Online &nbsp;•&nbsp; June 30th
+          </span>
+          <h1 class="font-head font-bold uppercase leading-[0.95] tracking-tight text-cream mt-6 mb-4 text-[2.4rem] sm:text-6xl lg:text-[3.6rem]">
+            An Evening With<br /><span class="gold-text shine-glow">Mikki &amp; Azai Willis</span>
+          </h1>
+          <p class="text-cream/80 text-base sm:text-lg font-light leading-relaxed max-w-lg mx-auto lg:mx-0">
+            Watch the world premiere of <span class="text-goldlt">SHINE</span>, then join Mikki and his son Azai live for a conversation and an audience Q&amp;A.
+          </p>
+        </div>
+
+      <div id="register" class="form-card rounded-2xl p-7 sm:p-9">
+        <div class="text-center mb-6">
+          <div class="font-head tracking-[0.18em] text-sm text-gold uppercase mb-2">Free Registration</div>
+          <h2 class="font-head font-semibold uppercase text-[1.6rem] sm:text-4xl text-cream leading-none">Reserve Your Free Seat</h2>
+          <p class="text-cream/70 mt-3 text-sm sm:text-base font-light">Enter your name and email to lock in your spot for June 30th.</p>
+        </div>
+
+        <form id="seatForm" class="space-y-4" novalidate>
+          <div>
+            <label for="firstName" class="block font-head tracking-[0.14em] text-[11px] text-cream/60 uppercase mb-2">First Name</label>
+            <input id="firstName" name="firstName" type="text" class="fld" placeholder="Your first name" required />
+          </div>
+          <div>
+            <label for="email" class="block font-head tracking-[0.14em] text-[11px] text-cream/60 uppercase mb-2">Email Address</label>
+            <input id="email" name="email" type="email" class="fld" placeholder="you@example.com" required />
+          </div>
+
+          <button type="submit" class="btn-gold w-full rounded-xl font-head font-bold uppercase text-lg py-4 mt-2">
+            Save My Free Seat
+          </button>
+        </form>
+
+        <p class="text-center text-cream/55 text-xs mt-4 leading-relaxed">
+          100% free. We will send your private viewing link and a reminder before we go live.
+        </p>
+
+        <p class="text-center text-cream/40 text-[11px] leading-relaxed mt-3">
+          By clicking Save My Free Seat above you agree to receive emails from us and our partners, and you agree to our
+          <a href="https://mikkiwillis.com/terms-of-service" target="_blank" rel="noopener" class="text-gold/80 underline hover:text-gold">Terms of Service</a> and
+          <a href="https://mikkiwillis.com/privacy-policy" target="_blank" rel="noopener" class="text-gold/80 underline hover:text-gold">Privacy Policy</a>.
+        </p>
+
+        <div class="hairline w-full my-5"></div>
+
+        <div class="flex items-center justify-center text-center">
+          <div>
+            <div class="font-head text-gold text-2xl leading-none">June 29</div>
+            <div class="font-head tracking-[0.14em] text-[10px] text-cream/55 uppercase mt-1">Registration Closes · Midnight</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COUNTDOWN (under the registration widget) -->
+      <div class="form-card rounded-2xl px-6 py-6">
+        <div class="font-head tracking-[0.2em] text-sm text-gold uppercase text-center mb-4">The Premiere Begins In</div>
+        <div id="countdown" class="flex items-stretch justify-center gap-2.5 sm:gap-3">
+          <div class="cd-tile"><span id="cd-d" class="cd-num">00</span><span class="cd-lbl">Days</span></div>
+          <div class="cd-tile"><span id="cd-h" class="cd-num">00</span><span class="cd-lbl">Hours</span></div>
+          <div class="cd-tile"><span id="cd-m" class="cd-num">00</span><span class="cd-lbl">Minutes</span></div>
+          <div class="cd-tile"><span id="cd-s" class="cd-num">00</span><span class="cd-lbl">Seconds</span></div>
+        </div>
+        <div class="text-center text-cream/55 text-xs mt-4 font-light tracking-wide">June 30th &middot; 7:00 PM CST &middot; Live Online</div>
+      </div>
+      </div><!-- /right column -->
+
+    </div><!-- /split -->
+  </div>
+</header>
+
+<!-- ================= WATCH HIS TEDX TALK ================= -->
+<section class="cinema-bg relative border-t border-gold/10">
+  <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 py-16 text-center reveal">
+    <span class="font-head tracking-[0.2em] text-sm sm:text-base text-gold uppercase">Before June 30th</span>
+    <h2 class="font-head font-semibold uppercase text-3xl sm:text-5xl text-cream mt-3 mb-8">Watch His TEDx Talk</h2>
+    <div class="relative max-w-2xl mx-auto">
+      <div class="tedx-callout rounded-full px-3 sm:px-4 py-1.5 sm:py-2 flex items-center gap-1.5 sm:gap-2">
+        <span class="font-head font-bold tracking-wider text-[12px] sm:text-[13px]"><span class="text-[#e62117]">TED</span><span class="text-cream">x</span></span>
+        <span class="w-px h-3 bg-gold/50"></span>
+        <span class="font-head tracking-[0.08em] sm:tracking-[0.14em] text-[10px] sm:text-xs text-goldlt uppercase whitespace-nowrap">Azai speaking at TEDx in Austin</span>
+      </div>
+      <button id="videoTrigger" type="button" aria-label="Play Azai Willis TEDx talk" class="frame block w-full rounded-xl overflow-hidden bg-black group">
+        <div class="relative aspect-video">
+          <img src="../images/tedx-azai-thumbnail.jpg" alt="Azai Willis speaking at TEDx in Austin" class="w-full h-full object-cover" />
+          <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(0,0,0,0.05),rgba(0,0,0,0.45));"></div>
+          <span class="play-btn play-ring"><svg width="30" height="30" viewBox="0 0 24 24" fill="#1a1410" style="margin-left:4px;"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="absolute bottom-4 left-4 font-head tracking-[0.18em] text-xs text-cream/90 uppercase bg-black/45 px-3 py-1 rounded">Watch his TEDx talk</span>
+        </div>
+      </button>
+      <p class="text-cream/75 text-base sm:text-lg font-light leading-relaxed mt-6 max-w-xl mx-auto">
+        Watch 14 year old <span class="text-goldlt font-medium">Azai Willis</span> give a TED talk, which touches on some of the themes in the film. Bring your family to the live screening on June 30th. You won&rsquo;t want to miss it.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= THE STORY ================= -->
+<section class="cinema-bg relative border-t border-gold/10">
+  <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 py-20 text-center reveal">
+
+    <!-- Emotional hook quote now opens the story (moved out of the hero) -->
+    <figure class="max-w-3xl mx-auto mb-14">
+      <blockquote class="relative text-cream font-light text-2xl sm:text-3xl lg:text-[2.1rem] italic leading-[1.4] px-7 sm:px-10">
+        <span class="font-head text-gold text-6xl leading-none absolute -left-2 -top-5 select-none">“</span>
+        What I&rsquo;m about to share could explain everything. The depression. The anxiety. The emptiness. The disconnection that&rsquo;s become our new normal.
+      </blockquote>
+      <figcaption class="mt-5 font-head tracking-[0.2em] text-sm sm:text-base text-gold uppercase">&mdash; Azai Willis, age 14</figcaption>
+    </figure>
+
+    <div class="hairline w-32 mx-auto mb-12"></div>
+
+    <span class="font-head tracking-[0.2em] text-sm sm:text-base text-gold uppercase">A Six Minute Film</span>
+    <h2 class="font-head font-semibold uppercase text-[1.5rem] sm:text-5xl text-cream mt-3 mb-6 leading-tight">It is six minutes long.<br class="hidden sm:block" /> It will stay with you a lot longer.</h2>
+
+
+    <div class="space-y-5 text-cream/80 text-lg font-light leading-relaxed">
+      <p>SHINE asks the question almost no one is brave enough to ask out loud. What if your desires, your choices, even your thoughts weren&rsquo;t your own? What if something has been quietly shaping them all along?</p>
+      <p>The most surprising part is who is asking it. SHINE was directed by 14 year old Azai Willis. He saw something clearly that most people miss for their entire life. Then he turned it into a six minute movie so striking it won Best Documentary Short at the Santa Monica Film Festival and is now touring major US film festivals.</p>
+      <p>Azai is the son of <span class="text-goldlt">Mikki Willis</span>, director and producer of the Plandemic film series, one of the most watched and most censored documentary series of all time.</p>
+      <p class="text-cream/95">On June 30th, father and son sit down together, live, to talk about SHINE and the profound insights it reveals about the precarious moment we are living in, and how to recognize the traps of subliminal influence.</p>
+      <p class="font-head text-gold text-xl tracking-wide uppercase pt-2">This is the first time anyone outside the festival circuit will see SHINE. And the film is only the beginning of the night.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHAT HAPPENS LIVE ================= -->
+<section class="cinema-bg relative border-t border-gold/10">
+  <div class="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 py-20">
+    <div class="text-center mb-12 reveal">
+      <span class="font-head tracking-[0.2em] text-sm sm:text-base text-gold uppercase">The Evening</span>
+      <h2 class="font-head font-semibold uppercase text-3xl sm:text-5xl text-cream mt-3">What Happens Live</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-5">
+      <div class="card rounded-xl p-7 reveal flex gap-4">
+        <span class="font-head text-gold text-3xl leading-none">01</span>
+        <p class="text-cream/85 text-lg font-light">The world premiere of SHINE</p>
+      </div>
+      <div class="card rounded-xl p-7 reveal flex gap-4">
+        <span class="font-head text-gold text-3xl leading-none">02</span>
+        <p class="text-cream/85 text-lg font-light">A live conversation between Azai Willis and his father, Mikki Willis</p>
+      </div>
+      <div class="card rounded-xl p-7 reveal flex gap-4">
+        <span class="font-head text-gold text-3xl leading-none">03</span>
+        <p class="text-cream/85 text-lg font-light">Your chance to ask them both anything in a live audience Q&amp;A</p>
+      </div>
+      <div class="card rounded-xl p-7 reveal flex gap-4">
+        <span class="font-head text-gold text-3xl leading-none">04</span>
+        <p class="text-cream/85 text-lg font-light">Announcement of what&rsquo;s next for Azai</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MEET THE FILMMAKERS ================= -->
+<section class="cinema-bg relative border-t border-gold/10">
+  <div class="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 py-20">
+    <div class="text-center mb-12 reveal">
+      <span class="font-head tracking-[0.2em] text-sm sm:text-base text-gold uppercase">Father &amp; Son</span>
+      <h2 class="font-head font-semibold uppercase text-3xl sm:text-5xl text-cream mt-3">Meet the Filmmakers</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-7 max-w-4xl mx-auto">
+      <!-- Azai -->
+      <div class="card rounded-2xl overflow-hidden reveal">
+        <div class="relative">
+          <img src="../images/azai-willis.jpg" alt="Azai Willis, director of SHINE, on the TEDx stage" loading="lazy" class="w-full h-80 sm:h-96 object-cover object-top" />
+          <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(17,15,14,0) 56%,rgba(17,15,14,0.55) 74%,rgba(17,15,14,0.96));"></div>
+          <div class="absolute bottom-4 left-5 right-5">
+            <h3 class="font-head font-semibold uppercase text-2xl text-cream leading-none">Azai Willis</h3>
+            <div class="font-head tracking-[0.16em] text-xs text-gold uppercase mt-1.5">Director of SHINE &middot; Age 14</div>
+          </div>
+        </div>
+        <p class="text-cream/75 px-7 py-6 font-light">Winner of Best Documentary Short at the Santa Monica Film Festival. He tells the truth in a way few adults dare to.</p>
+      </div>
+      <!-- Mikki -->
+      <div class="card rounded-2xl overflow-hidden reveal">
+        <div class="relative">
+          <img src="../images/mikki-willis.jpg" alt="Mikki Willis, director of the Plandemic series" loading="lazy" class="w-full h-80 sm:h-96 object-cover object-top" />
+          <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(17,15,14,0) 56%,rgba(17,15,14,0.55) 74%,rgba(17,15,14,0.96));"></div>
+          <div class="absolute bottom-4 left-5 right-5">
+            <h3 class="font-head font-semibold uppercase text-2xl text-cream leading-none">Mikki Willis</h3>
+            <div class="font-head tracking-[0.16em] text-xs text-gold uppercase mt-1.5">Director &middot; Plandemic Series</div>
+          </div>
+        </div>
+        <p class="text-cream/75 px-7 py-6 font-light">Director and producer of one of the most watched and most censored film events of all time, and a voice millions trust for saying what others will not.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY LIVE + DETAILS ================= -->
+<section class="cinema-bg relative border-t border-gold/10">
+  <div class="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 pt-20 pb-10">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Why live -->
+      <div class="reveal">
+        <span class="font-head tracking-[0.2em] text-sm sm:text-base text-gold uppercase">Once Only</span>
+        <h2 class="font-head font-semibold uppercase text-3xl sm:text-5xl text-cream mt-3 mb-5 leading-tight">Why You Have to Be There Live</h2>
+        <p class="text-cream/80 text-lg font-light leading-relaxed">This happens once. The premiere, the conversation, and the Q&amp;A all unfold in real time. If you want to be in the room, June 30th is the only way in.</p>
+      </div>
+      <!-- Details -->
+      <div class="form-card rounded-2xl p-8 reveal">
+        <h3 class="font-head font-semibold uppercase text-2xl text-cream mb-6 text-center">The Details</h3>
+        <div class="space-y-4">
+          <div class="flex justify-between items-center border-b border-gold/15 pb-3">
+            <span class="font-head tracking-[0.14em] text-xs text-cream/55 uppercase">When</span>
+            <span class="text-goldlt font-medium text-right">June 30th · 7:00 PM CST</span>
+          </div>
+          <div class="flex justify-between items-center border-b border-gold/15 pb-3">
+            <span class="font-head tracking-[0.14em] text-xs text-cream/55 uppercase">Where</span>
+            <span class="text-goldlt font-medium text-right">Live online, from anywhere</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="font-head tracking-[0.14em] text-xs text-cream/55 uppercase">Cost</span>
+            <span class="text-goldlt font-medium text-right">Free</span>
+          </div>
+        </div>
+        <p class="text-cream/65 text-sm mt-6 leading-relaxed text-center">
+          Registration closes June 29th at midnight. Once it closes, it closes.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="cinema-bg grain vignette relative border-t border-gold/10">
+  <div class="relative z-10 max-w-2xl mx-auto px-5 sm:px-8 pt-12 pb-24 text-center reveal">
+    <div class="flex items-center justify-center gap-3 mb-6">
+      <span class="hairline w-12"></span>
+      <span class="font-head tracking-[0.2em] text-sm sm:text-base text-gold uppercase">One Night Only</span>
+      <span class="hairline w-12"></span>
+    </div>
+    <h2 class="font-head font-bold uppercase text-4xl sm:text-6xl mb-4 leading-none">
+      <span class="gold-text shine-glow">Reserve Your Free Seat</span>
+    </h2>
+    <p class="text-cream/75 text-lg font-light mb-9">Lock in your spot for the world premiere of SHINE on June 30th.</p>
+
+    <div class="form-card rounded-2xl p-7 sm:p-9 text-left">
+      <form id="seatForm2" class="space-y-4" novalidate>
+        <div>
+          <label for="firstName2" class="block font-head tracking-[0.14em] text-[11px] text-cream/60 uppercase mb-2">First Name</label>
+          <input id="firstName2" name="firstName" type="text" class="fld" placeholder="Your first name" required />
+        </div>
+        <div>
+          <label for="email2" class="block font-head tracking-[0.14em] text-[11px] text-cream/60 uppercase mb-2">Email Address</label>
+          <input id="email2" name="email" type="email" class="fld" placeholder="you@example.com" required />
+        </div>
+        <button type="submit" class="btn-gold w-full rounded-xl font-head font-bold uppercase text-lg py-4 mt-2">Save My Free Seat</button>
+      </form>
+      <p class="text-center text-cream/55 text-xs mt-4">100% free. We will send your private viewing link and a reminder before we go live.</p>
+      <p class="text-center text-cream/40 text-[11px] leading-relaxed mt-3">
+        By clicking Save My Free Seat above you agree to receive emails from us and our partners, and you agree to our
+        <a href="https://mikkiwillis.com/terms-of-service" target="_blank" rel="noopener" class="text-gold/80 underline hover:text-gold">Terms of Service</a> and
+        <a href="https://mikkiwillis.com/privacy-policy" target="_blank" rel="noopener" class="text-gold/80 underline hover:text-gold">Privacy Policy</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-ink border-t border-gold/15">
+  <div class="max-w-5xl mx-auto px-5 sm:px-8 py-10 text-center">
+    <div class="font-head tracking-[0.32em] text-sm text-gold uppercase">Decode The Narrative</div>
+    <p class="text-cream/40 text-xs mt-3 font-light">Truth isn&rsquo;t told, it&rsquo;s exposed.</p>
+    <p class="text-cream/30 text-[11px] mt-4">© 2026 Mikki Willis. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Mobile sticky CTA (thumb-friendly, jumps to the form) -->
+<a href="#register" class="sticky-cta lg:hidden fixed bottom-0 left-0 right-0 z-40 btn-gold text-center font-head font-bold uppercase text-lg py-4 tracking-wider" style="border-radius:0;">
+  Save My Free Seat &nbsp;&rarr;
+</a>
+
+<!-- ================= VIDEO LIGHTBOX ================= -->
+<div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 px-4">
+  <button id="closeLightbox" aria-label="Close video" class="absolute top-5 right-6 text-cream/70 hover:text-gold text-4xl font-head leading-none">&times;</button>
+  <div class="w-full max-w-4xl aspect-video">
+    <iframe id="ytFrame" class="w-full h-full rounded-lg" src="" title="Azai Willis TEDx talk"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+  // --- Click-to-play TEDx video (inline lightbox) ---
+  var YT_ID = 'Eeo1n0VvEjU';
+  var trigger = document.getElementById('videoTrigger');
+  var lightbox = document.getElementById('lightbox');
+  var frame = document.getElementById('ytFrame');
+  var closeBtn = document.getElementById('closeLightbox');
+
+  function openVideo() {
+    frame.src = 'https://www.youtube.com/embed/' + YT_ID + '?autoplay=1&rel=0';
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeVideo() {
+    frame.src = '';
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+  trigger.addEventListener('click', openVideo);
+  closeBtn.addEventListener('click', closeVideo);
+  lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeVideo(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeVideo(); });
+
+  // --- Scroll reveal ---
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+  // --- Native form placeholder (to be replaced by Zoom widget) ---
+  ['seatForm', 'seatForm2'].forEach(function (id) {
+    var f = document.getElementById(id);
+    if (!f) return;
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = f.querySelector('button[type="submit"]');
+      btn.textContent = 'Reserving…';
+      // NOTE: real registration (Zoom + MaroPost) wires in here; on success, redirect to the thank-you page.
+      window.location.href = '../thank-you.html';
+    });
+  });
+
+  // --- Countdown to the premiere ---
+  // June 30, 2026, 7:00 PM Central (CDT, UTC-5) == 2026-07-01T00:00:00Z
+  var TARGET = Date.parse('2026-07-01T00:00:00Z');
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function tickCountdown() {
+    var diff = TARGET - Date.now();
+    if (diff < 0) diff = 0;
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    var set = function (id, v) { var el = document.getElementById(id); if (el) el.textContent = pad(v); };
+    set('cd-d', d); set('cd-h', h); set('cd-m', m); set('cd-s', s);
+  }
+  tickCountdown();
+  setInterval(tickCountdown, 1000);
+</script>
+</body>
+</html>
