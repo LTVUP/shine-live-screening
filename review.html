@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SHINE Launch — Visual Review</title>
+<meta name="robots" content="noindex" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { ink:'#0d0d0d', gold:'#c2a86b', goldlt:'#e6d4a3', cream:'#fff5ee' },
+    fontFamily: { head:['Oswald','sans-serif'], body:['Roboto','sans-serif'] } } } };
+</script>
+<style>
+  body { background:#0d0d0d; color:#fff5ee; font-family:'Roboto',sans-serif; }
+  .font-head { font-family:'Oswald',sans-serif; }
+  .cinema-bg { background:
+      radial-gradient(900px 520px at 50% -10%, rgba(194,168,107,0.16), transparent 60%),
+      linear-gradient(180deg,#141210 0%,#0d0d0d 50%,#0b0b0b 100%); }
+  .gold-text { background:linear-gradient(180deg,#f3e6c0,#e6d4a3 35%,#c2a86b 70%,#9c8244); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .card { background:linear-gradient(180deg, rgba(34,31,29,0.7), rgba(17,15,14,0.8)); border:1px solid rgba(194,168,107,0.25); }
+  .pgbtn { background:linear-gradient(180deg,#e6d4a3,#c2a86b 60%,#ab8f4f); color:#1a1410; }
+  .pgbtn:hover { filter:brightness(1.06); }
+  .hairline { background:linear-gradient(90deg,transparent,rgba(194,168,107,0.6),transparent); height:1px; }
+  img.asset { border:1px solid rgba(194,168,107,0.3); border-radius:10px; box-shadow:0 20px 50px -25px rgba(0,0,0,0.9); }
+</style>
+</head>
+<body class="cinema-bg font-body antialiased min-h-screen">
+<div class="max-w-5xl mx-auto px-5 sm:px-8 py-12">
+
+  <div class="text-center mb-12">
+    <div class="font-head tracking-[0.3em] text-xs sm:text-sm text-gold uppercase">Internal Review</div>
+    <h1 class="font-head font-bold uppercase text-4xl sm:text-6xl mt-2"><span class="gold-text">SHINE Launch</span></h1>
+    <p class="text-cream/70 mt-3 font-light">Review every page and image here before we push anything live. June 30th premiere.</p>
+  </div>
+
+  <!-- PAGES -->
+  <div class="font-head tracking-[0.25em] text-sm text-gold uppercase mb-4">The Pages</div>
+  <div class="grid sm:grid-cols-3 gap-4 mb-14">
+    <a href="index.html" target="_blank" class="card rounded-xl p-6 text-center hover:border-gold/60 transition">
+      <div class="font-head font-semibold uppercase text-xl text-cream">Landing Page</div>
+      <div class="text-cream/55 text-sm mt-1 font-light">Registration / opt in</div>
+      <span class="pgbtn inline-block rounded-lg font-head font-bold uppercase text-xs px-5 py-2 mt-4 tracking-wider">Open Page</span>
+    </a>
+    <a href="thank-you.html" target="_blank" class="card rounded-xl p-6 text-center hover:border-gold/60 transition">
+      <div class="font-head font-semibold uppercase text-xl text-cream">Thank You Page</div>
+      <div class="text-cream/55 text-sm mt-1 font-light">After signup + calendar</div>
+      <span class="pgbtn inline-block rounded-lg font-head font-bold uppercase text-xs px-5 py-2 mt-4 tracking-wider">Open Page</span>
+    </a>
+    <a href="replay.html" target="_blank" class="card rounded-xl p-6 text-center hover:border-gold/60 transition">
+      <div class="font-head font-semibold uppercase text-xl text-cream">Replay Page</div>
+      <div class="text-cream/55 text-sm mt-1 font-light">Post event + DTN invite</div>
+      <span class="pgbtn inline-block rounded-lg font-head font-bold uppercase text-xs px-5 py-2 mt-4 tracking-wider">Open Page</span>
+    </a>
+  </div>
+
+  <div class="hairline w-full mb-12"></div>
+
+  <!-- IMAGES -->
+  <div class="font-head tracking-[0.25em] text-sm text-gold uppercase mb-5">The Images</div>
+
+  <div class="space-y-10">
+    <div>
+      <div class="font-head text-cream/80 uppercase text-sm tracking-wide mb-2">Desktop banner (landing page hero)</div>
+      <img class="asset w-full" src="images/shine-banner-horizontal.jpg" alt="SHINE horizontal banner" />
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-8 items-start">
+      <div>
+        <div class="font-head text-cream/80 uppercase text-sm tracking-wide mb-2">Mobile poster (one sheet)</div>
+        <img class="asset w-full max-w-xs" src="images/global-premiere-banner.jpg" alt="SHINE vertical poster" />
+      </div>
+      <div>
+        <div class="font-head text-cream/80 uppercase text-sm tracking-wide mb-2">Social share image (link previews)</div>
+        <img class="asset w-full" src="images/og-shine.jpg" alt="SHINE share image" />
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-6 items-start">
+      <div>
+        <div class="font-head text-cream/80 uppercase text-sm tracking-wide mb-2">Mikki Willis</div>
+        <img class="asset w-full" src="images/mikki-willis.jpg" alt="Mikki Willis" />
+      </div>
+      <div>
+        <div class="font-head text-cream/80 uppercase text-sm tracking-wide mb-2">Azai Willis</div>
+        <img class="asset w-full" src="images/azai-willis.jpg" alt="Azai Willis" />
+      </div>
+      <div>
+        <div class="font-head text-cream/80 uppercase text-sm tracking-wide mb-2">TEDx video thumbnail</div>
+        <img class="asset w-full" src="images/tedx-azai-thumbnail.jpg" alt="Azai TEDx thumbnail" />
+      </div>
+    </div>
+  </div>
+
+  <div class="hairline w-full my-12"></div>
+  <p class="text-center text-cream/40 text-xs font-light">SHINE Live Premiere · June 30 · Internal review only</p>
+</div>
+</body>
+</html>
