@@ -267,9 +267,11 @@
 
       <!-- RIGHT: Sign-up widget -->
       <!-- ============================================================= -->
-      <!--  ZOOM WEBINAR REGISTRATION WIDGET MOUNT POINT                  -->
-      <!--  Replace the native <form> below with the Zoom embed when      -->
-      <!--  wiring the live registration (keep .form-card wrapper).       -->
+      <!--  REGISTRATION FORM MOUNT POINT                                 -->
+      <!--  Wire this form to MaroPost (add to list, which triggers the   -->
+      <!--  email sequences). NO Zoom. The event streams free on YouTube; -->
+      <!--  the link emailed to registrants is the YouTube live link.     -->
+      <!--  On submit, redirect to thank-you.html.                        -->
       <!-- ============================================================= -->
       <div class="space-y-6 order-1 lg:order-none">
       <div id="register" class="form-card rounded-2xl p-7 sm:p-9">
@@ -556,7 +558,7 @@
       e.preventDefault();
       var btn = f.querySelector('button[type="submit"]');
       btn.textContent = 'Reserving…';
-      // NOTE: real registration (Zoom + MaroPost) wires in here; on success, redirect to the thank-you page.
+      // NOTE: wire this form to MaroPost (add to list). No Zoom. On success, redirect to the thank-you page.
       window.location.href = 'thank-you.html';
     });
   });
